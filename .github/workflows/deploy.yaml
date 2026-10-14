@@ -71,10 +71,10 @@ jobs:
       run: gcloud container clusters get-credentials gke-prod-payment --region ${{ env.REGION }}
 
     - name: Configurar Google Cloud SDK e kubectl
-        uses: google-github-actions/setup-gcloud@v2
-        with:
-          version: 'latest'
-          install_components: 'gke-gcloud-auth-plugin,kubectl'
+      uses: google-github-actions/setup-gcloud@v2
+      with:
+        version: 'latest'
+        install_components: 'gke-gcloud-auth-plugin,kubectl'
 
     - name: Deploy no Kubernetes
       run: |
